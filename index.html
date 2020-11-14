@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./img/soundingsapp_icon.ico" />
+  <link rel="stylesheet" href="style.css">
+  <title>Soundings Calculator</title>
+</head>
+<body>
+  <h1>Z-Tech 30-80 Fuel Soundings</h1>
+  <!-- Fuel tanks -->
+  <form id="form">
+    <table>
+      <!-- Main headings -->
+      <tr>
+        <th></th>
+        <th colspan="2">Measurements</th>
+        <th colspan="3">80 Percent</th>
+        <th colspan="3">90 Percent</th>
+      </tr>
+
+      <!-- Sub headings -->
+      <tr>
+        <td>Tank</td>
+        <td>Sounding</td>
+        <td>Gallons</td>
+        <td>Sounding</td>
+        <td>Gallons</td>
+        <td>Space</td>
+        <td>Sounding</td>
+        <td>Gallons</td>
+        <td>Space</td>
+      </tr>
+
+      <!-- Inner table -->
+      <!-- PF -->
+     <tr id="pf">
+       <td>Port Fwd</td>
+       <td class="measurement">
+         <input type="number" min="0" max="11" step="1" id="pf-ft">
+         <label for="pf-ft">'</label>
+         <input type="number" min="0" max="11" step="1" id="pf-in">
+         <label for="pf-in">"</label>
+       </td>
+       <td id="pf-measured-gallons"></td>
+       <td id="pf-80-sounding" class="stop-point">7'1"</td>
+       <td id="pf-80-gallons" class="stop-point">5615</td>
+       <td id="pf-80-space" class="space"></td>
+       <td id="pf-90-sounding" class="stop-point">7'9"</td>
+       <td id="pf-90-gallons" class="stop-point">6320</td>
+       <td id="pf-90-space" class="space"></td>
+     </tr>
+     
+      <!-- SF -->
+     <tr id="sf">
+       <td>Stbd Fwd</td>
+       <td class="measurement">
+         <input type="number" min="0" max="11" step="1" id="sf-ft">
+         <label for="sf-ft">'</label>
+         <input type="number" min="0" max="11" step="1" id="sf-in">
+         <label for="sf-in">"</label>
+       </td>
+       <td id="sf-measured-gallons"></td>
+       <td id="sf-80-sounding" class="stop-point">6'10"</td>
+       <td id="sf-80-gallons" class="stop-point">5643</td>
+       <td id="sf-80-space" class="space"></td>
+       <td id="sf-90-sounding" class="stop-point">7'6"</td>
+       <td id="sf-90-gallons" class="stop-point">6349</td>
+       <td id="sf-90-space" class="space"></td>
+     </tr>
+
+      <!-- CDB -->
+     <tr id="cdb">
+       <td>Center DB</td>
+       <td class="measurement">
+        <input type="number" min="0" max="11" step="1" id="cdb-ft">
+        <label for="cdb-ft">'</label>
+        <input type="number" min="0" max="11" step="1" id="cdb-in">
+        <label for="cdb-in">"</label>
+       </td>
+       <td id="cdb-measured-gallons"></td>
+       <td id="cdb-80-sounding" class="stop-point">4'9"</td>
+       <td id="cdb-80-gallons" class="stop-point">9022</td>
+       <td id="cdb-80-space" class="space"></td>
+       <td id="cdb-90-sounding" class="stop-point">5'4"</td>
+       <td id="cdb-90-gallons" class="stop-point">10187</td>
+       <td id="cdb-90-space" class="space"></td>
+     </tr>
+
+      <!-- PDB -->
+     <tr id="pdb">
+       <td>Port DB</td>
+       <td class="measurement">
+        <input type="number" min="0" max="11" step="1" id="pdb-ft">
+        <label for="pdb-ft">'</label>
+        <input type="number" min="0" max="11" step="1" id="pdb-in">
+        <label for="pdb-in">"</label>
+       </td>
+       <td id="pdb-measured-gallons"></td>
+       <td id="pdb-80-sounding" class="stop-point">3'7"</td>
+       <td id="pdb-80-gallons" class="stop-point">4533</td>
+       <td id="pdb-80-space" class="space"></td>
+       <td id="pdb-90-sounding" class="stop-point">4'0"</td>
+       <td id="pdb-90-gallons" class="stop-point">5149</td>
+       <td id="pdb-90-space" class="space"></td>
+     </tr>
+
+      <!-- SDB -->
+     <tr id="sdb">
+       <td>Stbd DB</td>
+       <td class="measurement">
+        <input type="number" min="0" max="11" step="1" id="sdb-ft">
+        <label for="sdb-ft">'</label>
+        <input type="number" min="0" max="11" step="1" id="sdb-in">
+        <label for="sdb-in">"</label>
+       </td>
+       <td id="sdb-measured-gallons"></td>
+       <td id="sdb-80-sounding" class="stop-point">3'8"</td>
+       <td id="sdb-80-gallons" class="stop-point">4623</td>
+       <td id="sdb-80-space" class="space"></td>
+       <td id="sdb-90-sounding" class="stop-point">4'0"</td>
+       <td id="sdb-90-gallons" class="stop-point">5116</td>
+       <td id="sdb-90-space" class="space"></td>
+     </tr>
+
+      <!-- Day tank -->
+     <tr id="dt">
+       <td>Day Tank</td>
+       <td>--</td>
+       <td id="dt-measured-gallons">5420</td>
+       <td class="stop-point">--</td>
+       <td class="stop-point">5420</td>
+       <td class="space">0</td>
+       <td class="stop-point">--</td>
+       <td class="stop-point">5420</td>
+       <td class="space">0</td>
+     </tr>
+
+     <!-- Totals -->
+     <tr id="total">
+      <td>TOTAL</td>
+      <td>--</td>
+      <!-- Populated fields -->
+      <td id="total-measured-gallons"></td>
+      <td class="stop-point">--</td>
+      <td id="total-80-gallons" class="stop-point">34856</td>
+      <td id="total-80-space" class="space"></td>
+      <td class="stop-point">--</td>
+      <td id="total-90-gallons" class="stop-point">38541</td>
+      <td id="total-90-space" class="space"></td>
+    </tr>
+    </table>
+
+    <!-- Submit -->
+    <input type="submit" id="calculate-fuel" class="calculate" value="Calculate">
+    <button id="reset" class="reset">Reset</button>
+  </form>
+
+  <script src="script.js"></script>
+</body>
+</html>
